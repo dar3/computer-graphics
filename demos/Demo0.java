@@ -100,6 +100,7 @@ public class Demo0 {
 		      //Patern 7 - colour waves
               // red - green waves
 
+                /*
 		      int  yp = (int)(i + 1.5*w1*Math.sin( 2*3.1425*3*(j/(double)width) ));
             yp = (yp + 2*w1) % w1;
 
@@ -108,7 +109,7 @@ public class Demo0 {
 		      else
                color = new Color( 0, 255, 0 ).getRGB();
 
-
+*/
 
 		      //Pattern 5 - faded triangle with shadows
 		      // transformed coordinates: xp yp
@@ -190,7 +191,7 @@ public class Demo0 {
 
 		       // Pattern - faded frame
                 // white square with black outline
-                /*
+
 	          double ff, gg;
 	          double margin = width/7;
 
@@ -224,7 +225,7 @@ public class Demo0 {
 	          color = new Color( g, g, g ).getRGB();
 	          image.setRGB( j, i, color );
 
-*/
+
 
 		      //Patter - uniform faded out
               // white line with black upper and bottom shadows
