@@ -10,9 +10,7 @@ import javax.imageio.*;
 
 public class Demo0 {
 
-    /**
-     * @param args
-     */
+
     private static Scanner in;
 
     public static void main(String[] args)
@@ -55,15 +53,18 @@ public class Demo0 {
         for ( i = 0; i < height; i++)
             for ( j = 0; j < width; j++)
             {
-		      /* Pattern 0 - random patern
+
+		      //Pattern 0 - random patern
+              // black and white pixels looks like no signal in TV
+                /*
 		      long seed = i*j+i;
 		      rand.setSeed( seed );
 		      color = rand.nextInt( 255);
 		      color = new Color( color, color, color  ).getRGB();
-		      */
+*/
 
                 // Pattern 1 - Basic sharp rings pattern
-		      /*
+                /*
             double d = Math.sqrt((double)(i - width/2)*(i-width/2) +
                                          (j-height/2)*(j-height/2));
             ri = ((int)d)/20;
@@ -74,10 +75,11 @@ public class Demo0 {
             }
             else
                color = byte2RGB( 255, 255, 255 );
-            */
 
+*/
 
             /* Mixed ring/angle zones
+            // the same as one below
 
             double d = Math.sqrt((double)(i - width/2)*(i-width/2) +
                                          (j-height/2)*(j-height/2));
@@ -95,7 +97,9 @@ public class Demo0 {
                //color = byte2RGB( 255, 255, 255 );
            */
 
-		      /* Patern 7 - colour waves
+		      //Patern 7 - colour waves
+              // red - green waves
+
 		      int  yp = (int)(i + 1.5*w1*Math.sin( 2*3.1425*3*(j/(double)width) ));
             yp = (yp + 2*w1) % w1;
 
@@ -103,11 +107,12 @@ public class Demo0 {
                color = new Color( 255, 0, 0 ).getRGB();
 		      else
                color = new Color( 0, 255, 0 ).getRGB();
-		      */
 
 
-		      /* Pattern 5 - faded triangle
+
+		      //Pattern 5 - faded triangle with shadows
 		      // transformed coordinates: xp yp
+/*
             int xp = j;
             int yp = i;
             if ( xp > width/2)
@@ -128,10 +133,11 @@ public class Demo0 {
                 br = 255 - br;
                 color = new Color( br, br, br ).getRGB();
             }
-		      */
 
-                // Basic sharp rings pattern
+*/
+                // Basic sharp rings pattern BASIC DEMO
 
+/*
                 double d1 = Math.sqrt((double)(i - width/2)*(i-width/2) +
                         (j-height/2)*(j-height/2));
                 d1 /= 1000;
@@ -147,7 +153,10 @@ public class Demo0 {
                 if ( intensity > 255 )
                     intensity = 255;
                 color = new Color( intensity, intensity, intensity ).getRGB();
-            /*
+*/
+
+//                do not uncomment. It creates whole black image
+                /*
             if ( (ri%2)==0)
             {
                color = byte2RGB( 0, 0, 0 );
@@ -155,9 +164,12 @@ public class Demo0 {
             }
             else
                color = byte2RGB( 255, 255, 255 );
-            */
 
-            /* Mixed ring/angle zones
+*/
+
+/*
+            // Mixed ring/angle zones
+            // creates blue and yellow pattern
 
             double d = Math.sqrt((double)(i - width/2)*(i-width/2) +
                                          (j-height/2)*(j-height/2));
@@ -173,10 +185,12 @@ public class Demo0 {
             else
                color = new Color( 0, 0, 255 ).getRGB();
                //color = byte2RGB( 255, 255, 255 );
-            */
 
+*/
 
-		       /* Pattern - faded frame
+		       // Pattern - faded frame
+                // white square with black outline
+                /*
 	          double ff, gg;
 	          double margin = width/7;
 
@@ -209,10 +223,13 @@ public class Demo0 {
 	             g = 255;
 	          color = new Color( g, g, g ).getRGB();
 	          image.setRGB( j, i, color );
-	          */
 
+*/
 
-		      /* Patter - uniform faded out
+		      //Patter - uniform faded out
+              // white line with black upper and bottom shadows
+
+                /*
 		      double ff;
 		      if ( i < width/2)
 		         ff = ((double)i) / (width/2);
@@ -223,10 +240,13 @@ public class Demo0 {
                g = 255;
             color = new Color( g, g, g ).getRGB();
             image.setRGB( j, i, color );
-		      */
 
+*/
 
-		      /* Pattern - fuzzy circle
+		      //Pattern - fuzzy circle
+              // black circle
+
+                /*
             double d = Math.sqrt((double)(i - width/2)*(i-width/2) +
                                          (j-height/2)*(j-height/2));
             if ( d < ri )
@@ -242,10 +262,14 @@ public class Demo0 {
                      g = 255;
                   color = new Color( g, g, g ).getRGB();
                }
-              */
+
+*/
 
 
-	           /* Pattren 3 - Concave caro
+	           //Pattren 3 - Concave caro
+               // black caro with red background
+
+                /*
 		        double d;
 		        d = Math.sqrt((double)(i - width)*(i-width) +
                                          (j-height)*(j-height));
@@ -272,10 +296,12 @@ public class Demo0 {
 	                 }
 	              }
 		        }
-		        */
+		       */
 
-		      /*
+
 		      // Pattern 4 - single vawed horizontal band
+              // red upper, white bottom
+             /*
             double ip = i + a*Math.sin( f * j/(double)(width) * 2 * Math.PI ) + a;
             //ip = i;
             int  ipw;
@@ -288,10 +314,12 @@ public class Demo0 {
                   color = new Color( 255, 255, 255 ).getRGB();
             }
             image.setRGB( j, i, color );
-            */
+*/
 
-	         /*
+
 		      // Basic pattern
+              // basic hypnotise circle white-black
+              /*
             double d = Math.sqrt((double)(i - width/2)*(i-width/2) +
              		                       (j-height/2)*(j-height/2));
             ri = ((int)d)/20;
@@ -302,9 +330,11 @@ public class Demo0 {
             }
             else
                color = byte2RGB( 255, 255, 255 );
-            */
+           */
 
-            /* Pattern - fuzzy stars
+            //Pattern - fuzzy stars
+            //funny  black - white star
+                /*
             double angle = Math.atan2((double)(j-height/2), (double)(i-width/2)) + 3.1415;
             angle = 8*angle;
             double mod = (Math.sin(angle) + 1.0) / 2.0;
@@ -322,8 +352,8 @@ public class Demo0 {
             if ( int_i < 0 )
                int_i = 0;
             color = new Color( int_i, int_i, int_i ).getRGB();
-            */
 
+*/
                 // Alternately Color class can be used to assemble INT_RGB
                 // gray = 45;
                 // color = (new Color( gray, gray, gray  )).getRGB();
@@ -347,7 +377,7 @@ public class Demo0 {
         {
             File  dir = new File ( dirname );
             dir.mkdir();
-            ImageIO.write( image, "bmp", new File("d:\\out_img_gray.bmp") );
+            ImageIO.write( image, "bmp", new File("D:\\Documents\\STUDIA\\PWr_SUBJECTS\\SEMESTR_6\\grafika_laby\\created_images\\out_img_gray.bmp") );
             System.out.println( "Gray image created successfully"  );
         }
         catch (IOException e)
@@ -356,6 +386,8 @@ public class Demo0 {
         };
 
         // Now make color image
+        // IMPORTANT: colores second image out_img_color.jpg
+
         for ( i = 0; i < height; i++)
             for ( j = 0; j < width; j++)
             {
@@ -367,7 +399,7 @@ public class Demo0 {
         // Save image in graphics file
         try
         {
-            ImageIO.write( image, "jpg", new File( "d:\\out_img_color.jpg") );
+            ImageIO.write( image, "jpg", new File( "D:\\Documents\\STUDIA\\PWr_SUBJECTS\\SEMESTR_6\\grafika_laby\\created_images\\out_img_color.jpg") );
             System.out.println( "Color image created successfully" );
         }
         catch (IOException e)
