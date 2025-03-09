@@ -13,49 +13,48 @@ public class Demo0 {
 
     private static Scanner in;
 
-    public static void main(String[] args)
-    {
-        String  dirname = "c:\\GK";
+    public static void main(String[] args) {
+        String dirname = "c:\\GK";
 
 
-        System.out.println("Demo0 just started" );
+        System.out.println("Demo0 just started");
 
 
-        BufferedImage  image;
+        BufferedImage image;
 
         // Reading image from the file. By using ImageIO
         // =================================================================
-        String         image_name;
-        BufferedImage  input_image;
+        String image_name;
+        BufferedImage input_image;
         int img_width, img_height;
 
 
         // Create an empty image
-        image = new BufferedImage( 2000, 2000,
-                BufferedImage.TYPE_INT_RGB );
+        image = new BufferedImage(2000, 2000,
+                BufferedImage.TYPE_INT_RGB);
 
         // Fill it with a gray-shaded pattern
-        int  color;
-        int  gray;
-        int  i, j;
-        double  a, f;
-        a = 20.0;   f = 5.0;
-        int  w = 30;
-        int  height = image.getHeight();
-        int  width  = image.getWidth();
+        int color;
+        int gray;
+        int i, j;
+        double a, f;
+        a = 20.0;
+        f = 5.0;
+        int w = 30;
+        int height = image.getHeight();
+        int width = image.getWidth();
 
         color = 0;
         w = width;
-        int  w1 = 50;
+        int w1 = 50;
         int ri = 50;
         int ro = 150;
         Random rand = new Random();
-        for ( i = 0; i < height; i++)
-            for ( j = 0; j < width; j++)
-            {
+        for (i = 0; i < height; i++)
+            for (j = 0; j < width; j++) {
 
-		      //Pattern 0 - random patern
-              // black and white pixels looks like no signal in TV
+                //Pattern 0 - random pattern
+                // black and white pixels looks like no signal in TV
                 /*
 		      long seed = i*j+i;
 		      rand.setSeed( seed );
@@ -97,8 +96,8 @@ public class Demo0 {
                //color = byte2RGB( 255, 255, 255 );
            */
 
-		      //Patern 7 - colour waves
-              // red - green waves
+                //Patern 7 - colour waves
+                // red - green waves
 
                 /*
 		      int  yp = (int)(i + 1.5*w1*Math.sin( 2*3.1425*3*(j/(double)width) ));
@@ -111,8 +110,8 @@ public class Demo0 {
 
 */
 
-		      //Pattern 5 - faded triangle with shadows
-		      // transformed coordinates: xp yp
+                //Pattern 5 - faded triangle with shadows
+                // transformed coordinates: xp yp
 /*
             int xp = j;
             int yp = i;
@@ -189,9 +188,9 @@ public class Demo0 {
 
 */
 
-		       // Pattern - faded frame
+                // Pattern - faded frame
                 // white square with black outline
-
+/*
 	          double ff, gg;
 	          double margin = width/7;
 
@@ -225,10 +224,10 @@ public class Demo0 {
 	          color = new Color( g, g, g ).getRGB();
 	          image.setRGB( j, i, color );
 
+*/
 
-
-		      //Patter - uniform faded out
-              // white line with black upper and bottom shadows
+                //Patter - uniform faded out
+                // white line with black upper and bottom shadows
 
                 /*
 		      double ff;
@@ -244,8 +243,8 @@ public class Demo0 {
 
 */
 
-		      //Pattern - fuzzy circle
-              // black circle
+                //Pattern - fuzzy circle
+                // black circle
 
                 /*
             double d = Math.sqrt((double)(i - width/2)*(i-width/2) +
@@ -267,8 +266,8 @@ public class Demo0 {
 */
 
 
-	           //Pattren 3 - Concave caro
-               // black caro with red background
+                //Pattren 3 - Concave caro
+                // black caro with red background
 
                 /*
 		        double d;
@@ -300,8 +299,8 @@ public class Demo0 {
 		       */
 
 
-		      // Pattern 4 - single vawed horizontal band
-              // red upper, white bottom
+                // Pattern 4 - single vawed horizontal band
+                // red upper, white bottom
              /*
             double ip = i + a*Math.sin( f * j/(double)(width) * 2 * Math.PI ) + a;
             //ip = i;
@@ -318,23 +317,22 @@ public class Demo0 {
 */
 
 
-		      // Basic pattern
-              // basic hypnotise circle white-black
-              /*
-            double d = Math.sqrt((double)(i - width/2)*(i-width/2) +
-             		                       (j-height/2)*(j-height/2));
-            ri = ((int)d)/20;
-            if ( (ri%2)==0)
-            {
-               color = byte2RGB( 0, 0, 0 );
-               color = new Color( 0, 0, 0 ).getRGB();
-            }
-            else
-               color = byte2RGB( 255, 255, 255 );
-           */
+                // Basic pattern
+                // basic hypnotise circle white-black
 
-            //Pattern - fuzzy stars
-            //funny  black - white star
+                double d = Math.sqrt((double) (i - width / 2) * (i - width / 2) +
+                        (j - height / 2) * (j - height / 2));
+                ri = ((int) d) / 20;
+                if ((ri % 2) == 0) {
+                    color = byte2RGB(0, 0, 0);
+                    color = new Color(0, 0, 0).getRGB();
+                } else
+                    color = byte2RGB(255, 255, 255);
+
+                System.out.println(d);
+
+                //Pattern - fuzzy stars
+                //funny  black - white star
                 /*
             double angle = Math.atan2((double)(j-height/2), (double)(i-width/2)) + 3.1415;
             angle = 8*angle;
@@ -360,12 +358,12 @@ public class Demo0 {
                 // color = (new Color( gray, gray, gray  )).getRGB();
 
                 // IN order to read R,G,B from a pixel
-                image.setRGB( j, i, color );
+                image.setRGB(j, i, color);
 
 
                 // IN order to read R,G,B from a pixel
-                int  in_c = image.getRGB(i, j);
-                Color cc_in = new Color( in_c );
+                int in_c = image.getRGB(i, j);
+                Color cc_in = new Color(in_c);
                 int rc = cc_in.getRed();
                 int gc = cc_in.getGreen();
                 int bc = cc_in.getBlue();
@@ -374,62 +372,54 @@ public class Demo0 {
             }
 
         // Save image in graphics file
-        try
-        {
-            File  dir = new File ( dirname );
+        try {
+            File dir = new File(dirname);
             dir.mkdir();
-            ImageIO.write( image, "bmp", new File("D:\\Documents\\STUDIA\\PWr_SUBJECTS\\SEMESTR_6\\grafika_laby\\created_images\\out_img_gray.bmp") );
-            System.out.println( "Gray image created successfully"  );
+            ImageIO.write(image, "bmp", new File("D:\\Documents\\STUDIA\\PWr_SUBJECTS\\SEMESTR_6\\grafika_laby\\created_images\\out_img_gray.bmp"));
+            System.out.println("Gray image created successfully");
+        } catch (IOException e) {
+            System.out.println("Gray image cannot be stored in BMP file");
         }
-        catch (IOException e)
-        {
-            System.out.println( "Gray image cannot be stored in BMP file" );
-        };
 
         // Now make color image
         // IMPORTANT: colores second image out_img_color.jpg
 
-        for ( i = 0; i < height; i++)
-            for ( j = 0; j < width; j++)
-            {
-                gray = (byte)(j % 256);
-                color = byte2RGB( gray, (256 - gray), (i%256) );
-                image.setRGB( j, i, color );
+        for (i = 0; i < height; i++)
+            for (j = 0; j < width; j++) {
+                gray = (byte) (j % 256);
+                color = byte2RGB(gray, (256 - gray), (i % 256));
+                image.setRGB(j, i, color);
             }
 
         // Save image in graphics file
-        try
-        {
-            ImageIO.write( image, "jpg", new File( "D:\\Documents\\STUDIA\\PWr_SUBJECTS\\SEMESTR_6\\grafika_laby\\created_images\\out_img_color.jpg") );
-            System.out.println( "Color image created successfully" );
+        try {
+            ImageIO.write(image, "jpg", new File("D:\\Documents\\STUDIA\\PWr_SUBJECTS\\SEMESTR_6\\grafika_laby\\created_images\\out_img_color.jpg"));
+            System.out.println("Color image created successfully");
+        } catch (IOException e) {
+            System.out.println("Color image cannot be stored in BMP file");
         }
-        catch (IOException e)
-        {
-            System.out.println( "Color image cannot be stored in BMP file" );
-        };
+        ;
 
 
         // Not used here but you should know how ...
         // Acquire the list of formats currently supported by ImageIO
-        String  formats[] = ImageIO.getReaderFormatNames();
-        writeln( "You can use the following image file formats:" );
-        for ( i = 0; i < formats.length; i++ )
-            writeln( formats[i] );
+        String formats[] = ImageIO.getReaderFormatNames();
+        writeln("You can use the following image file formats:");
+        for (i = 0; i < formats.length; i++)
+            writeln(formats[i]);
 
         // Not used here but you should know how ...
         // Lines below show how to query supported file types
         // and how to read a graphic file
         in = new Scanner(System.in);
         input_image = null;
-        writeln( "Type the image location and name to read:" );
+        writeln("Type the image location and name to read:");
         image_name = readStr();
 
-        try
-        {
-            input_image = ImageIO.read( new File( image_name ) );
-        }
-        catch (IOException e) {
-            System.out.println( "Cannot read this image" );
+        try {
+            input_image = ImageIO.read(new File(image_name));
+        } catch (IOException e) {
+            System.out.println("Cannot read this image");
         }
 
       /*
@@ -440,15 +430,14 @@ public class Demo0 {
       int gc = cc_in.getGreen();
       int bc = cc_in.getBlue();
       */
-        System.exit( 0 );
+        System.exit(0);
     }
 
-    static int byte2RGB( int red, int green, int blue)
-    {
+    static int byte2RGB(int red, int green, int blue) {
         // Color components must be in range 0 - 255
-        red   = 0xff & red;
+        red = 0xff & red;
         green = 0xff & green;
-        blue  = 0xff & blue;
+        blue = 0xff & blue;
         return (red << 16) + (green << 8) + blue;
     }
     //=======================================================================
@@ -457,34 +446,27 @@ public class Demo0 {
     //=======================================================================
     //=======================================================================
 
-    static void writeln( String stg )
-    {
-        System.out.println( stg );
+    static void writeln(String stg) {
+        System.out.println(stg);
     }
 
-    static void readln()
-    {
-        try
-        {
-            while( System.in.read() != '\n' );
-        }
-        catch( Throwable obj )
-        {
+    static void readln() {
+        try {
+            while (System.in.read() != '\n') ;
+        } catch (Throwable obj) {
         }
     }
 
-    static String readStr()	{
+    static String readStr() {
         return in.next();
     }
 
-    static int readInt()
-    {
+    static int readInt() {
         return (in.nextInt());
     }
 
-    static double readDouble()
-    {
-        return (in.nextDouble() );
+    static double readDouble() {
+        return (in.nextDouble());
     }
 }
 

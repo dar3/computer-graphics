@@ -1,4 +1,4 @@
-package solutions;
+package list1;
 
 import java.io.*;
 import java.util.Random;
@@ -6,7 +6,7 @@ import java.awt.image.*;
 import java.awt.Color;
 import javax.imageio.*;
 
-public class List1 {
+public class Task1a_blur {
 
     private static final int IMAGE_SIZE = 2000;
 
@@ -16,8 +16,8 @@ public class List1 {
         BufferedImage grayImage = createGrayImage(IMAGE_SIZE, IMAGE_SIZE);
         saveImage(grayImage, "bmp", "D:\\Documents\\STUDIA\\PWr_SUBJECTS\\SEMESTR_6\\grafika_laby\\created_images\\out_img_gray.bmp", "Gray");
 
-        BufferedImage colorImage = createColorImage(IMAGE_SIZE, IMAGE_SIZE);
-        saveImage(colorImage, "jpg", "D:\\Documents\\STUDIA\\PWr_SUBJECTS\\SEMESTR_6\\grafika_laby\\created_images\\out_img_color.jpg", "Color");
+//        BufferedImage colorImage = createColorImage(IMAGE_SIZE, IMAGE_SIZE);
+//        saveImage(colorImage, "jpg", "D:\\Documents\\STUDIA\\PWr_SUBJECTS\\SEMESTR_6\\grafika_laby\\created_images\\out_img_color.jpg", "Color");
 
         System.exit(0);
     }
