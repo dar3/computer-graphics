@@ -30,7 +30,7 @@ public class Demo0 {
 
 
         // Create an empty image
-        image = new BufferedImage(2000, 2000,
+        image = new BufferedImage(500, 500,
                 BufferedImage.TYPE_INT_RGB);
 
         // Fill it with a gray-shaded pattern
@@ -329,7 +329,7 @@ public class Demo0 {
                 } else
                     color = byte2RGB(255, 255, 255);
 
-                System.out.println(d);
+//                System.out.println(d);
 
                 //Pattern - fuzzy stars
                 //funny  black - white star
@@ -375,7 +375,7 @@ public class Demo0 {
         try {
             File dir = new File(dirname);
             dir.mkdir();
-            ImageIO.write(image, "bmp", new File("D:\\Documents\\STUDIA\\PWr_SUBJECTS\\SEMESTR_6\\grafika_laby\\created_images\\out_img_gray.bmp"));
+            ImageIO.write(image, "bmp", new File("D:\\Documents\\STUDIA\\PWr_SUBJECTS\\SEMESTR_6\\grafika_laby\\created_images\\demos\\out_img_gray.bmp"));
             System.out.println("Gray image created successfully");
         } catch (IOException e) {
             System.out.println("Gray image cannot be stored in BMP file");
@@ -384,20 +384,20 @@ public class Demo0 {
         // Now make color image
         // IMPORTANT: colores second image out_img_color.jpg
 
-        for (i = 0; i < height; i++)
-            for (j = 0; j < width; j++) {
-                gray = (byte) (j % 256);
-                color = byte2RGB(gray, (256 - gray), (i % 256));
-                image.setRGB(j, i, color);
-            }
+//        for (i = 0; i < height; i++)
+//            for (j = 0; j < width; j++) {
+//                gray = (byte) (j % 256);
+//                color = byte2RGB(gray, (256 - gray), (i % 256));
+//                image.setRGB(j, i, color);
+//            }
 
         // Save image in graphics file
-        try {
-            ImageIO.write(image, "jpg", new File("D:\\Documents\\STUDIA\\PWr_SUBJECTS\\SEMESTR_6\\grafika_laby\\created_images\\out_img_color.jpg"));
-            System.out.println("Color image created successfully");
-        } catch (IOException e) {
-            System.out.println("Color image cannot be stored in BMP file");
-        }
+//        try {
+//            ImageIO.write(image, "jpg", new File("D:\\Documents\\STUDIA\\PWr_SUBJECTS\\SEMESTR_6\\grafika_laby\\created_images\\out_img_color.jpg"));
+//            System.out.println("Color image created successfully");
+//        } catch (IOException e) {
+//            System.out.println("Color image cannot be stored in BMP file");
+//        }
         ;
 
 
