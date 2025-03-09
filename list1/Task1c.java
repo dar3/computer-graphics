@@ -7,11 +7,6 @@ public class Task1c {
 
     public static void main(String[] args) {
 
-        if (args.length < 7) {
-            System.out.println("Użycie: java Task1b <rozmiar obrazu> <wielkość pola> <kolor1 R> <kolor1 G> <kolor1 B> <kolor2 R> <kolor2 G> <kolor2 B> <ścieżka zapisu>");
-            return;
-        }
-
         int width = 500;
         int height = 500;
 
@@ -26,7 +21,6 @@ public class Task1c {
         int r2 = Integer.parseInt(args[4]);
         int g2 = Integer.parseInt(args[5]);
         int b2 = Integer.parseInt(args[6]);
-
 
 
         BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
