@@ -48,6 +48,8 @@ public class Task2b {
         String savePath = "D:\\Documents\\STUDIA\\PWr_SUBJECTS\\SEMESTR_6\\grafika_laby\\created_images\\task2b.bmp";
         Utils.saveImage(image, savePath);
 
+//        java .\Task2b.java D:\Documents\Programming_projects\ComputerGraphics\images\antenna.jpg
+
 
     }
 
