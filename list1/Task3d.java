@@ -11,16 +11,18 @@ public class Task3d {
         int imageHeight = 500;
 
         int elem_size = 100;
-        int center_x = elem_size / 2;
-        int center_y = elem_size / 2;
+        int center_x;
+        int center_y;
 
         int ring_width = 8;
 
         int whiteColor = Utils.int2RGB(255,255,255);
         int blackColor = Utils.int2RGB(0,0,0);
 
-// Fill raster matrix pixel by pixel
         BufferedImage image = new BufferedImage(imageWidth, imageHeight, BufferedImage.TYPE_INT_RGB);
+
+// Fill raster matrix pixel by pixel
+
         for (int i = 0; i < imageHeight; i++)
             for (int j = 0; j < imageWidth; j++) {
                 int is = i % elem_size;
