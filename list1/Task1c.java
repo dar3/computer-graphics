@@ -42,7 +42,7 @@ public class Task1c {
         }
 
 
-        String savePath = "D:\\Documents\\STUDIA\\PWr_SUBJECTS\\SEMESTR_6\\grafika_laby\\created_images\\task1c.bmp";
+        String savePath = "..\\results\\task1c.bmp";
         Utils.saveImage(image, savePath);
 
 //        for cmd

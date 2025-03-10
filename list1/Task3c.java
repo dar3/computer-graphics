@@ -54,7 +54,7 @@ public class Task3c {
                 // IN order to read R,G,B from a pixel
                 image.setRGB(j, i, color);
             }
-        String savePath = "D:\\Documents\\STUDIA\\PWr_SUBJECTS\\SEMESTR_6\\grafika_laby\\created_images\\task3c.bmp";
+        String savePath = ".\\results\\task3c.bmp";
         Utils.saveImage(image, savePath);
     }
 }

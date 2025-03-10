@@ -78,7 +78,7 @@ public class Task3a {
             }
         }
 
-        String savePath = "D:\\Documents\\STUDIA\\PWr_SUBJECTS\\SEMESTR_6\\grafika_laby\\created_images\\task3a.bmp";
+        String savePath = ".\\results\\task3a.bmp";
         Utils.saveImage(image, savePath);
 
     }

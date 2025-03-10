@@ -42,11 +42,11 @@ public class Task2a {
                     image.setRGB(j, i, blackColor);
             }
 
-        String savePath = "D:\\Documents\\STUDIA\\PWr_SUBJECTS\\SEMESTR_6\\grafika_laby\\created_images\\task2a.bmp";
+        String savePath = "..\\results\\task2a.bmp";
         Utils.saveImage(image, savePath);
 
         //command for cmd
-        // java .\Task2a.java D:\Documents\Programming_projects\ComputerGraphics\images\antenna.jpg
+        // java .\Task2a.java ..\images\antenna.jpg
 
 
     }

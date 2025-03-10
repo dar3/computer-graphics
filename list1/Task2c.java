@@ -39,10 +39,11 @@ public class Task2c {
 
         }
 
-        String savePath = "D:\\Documents\\STUDIA\\PWr_SUBJECTS\\SEMESTR_6\\grafika_laby\\created_images\\task2c.bmp";
+//        String savePath = "D:\\Documents\\STUDIA\\PWr_SUBJECTS\\SEMESTR_6\\grafika_laby\\created_images\\task2c.bmp";
+        String savePath = "..\\results\\task2c.bmp";
         Utils.saveImage(image, savePath);
 
-//        java .\Task2c.java D:\Documents\Programming_projects\ComputerGraphics\images\antenna.jpg
+//        java .\Task2c.java ..\images\antenna.jpg
 
     }
 }

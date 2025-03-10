@@ -8,13 +8,14 @@ import javax.imageio.*;
 
 public class Task1a_blur {
 
-    private static final int IMAGE_SIZE = 2000;
+    private static final int IMAGE_SIZE = 200;
 
     public static void main(String[] args) {
         System.out.println("Program just started");
 
-        BufferedImage grayImage = createGrayImage(IMAGE_SIZE, IMAGE_SIZE);
-        saveImage(grayImage, "bmp", "D:\\Documents\\STUDIA\\PWr_SUBJECTS\\SEMESTR_6\\grafika_laby\\created_images\\out_img_gray.bmp", "Gray");
+        BufferedImage image = createGrayImage(IMAGE_SIZE, IMAGE_SIZE);
+        String savePath = ".\\results\\task1a_blur.bmp";
+        Utils.saveImage(image, savePath);
 
 //        BufferedImage colorImage = createColorImage(IMAGE_SIZE, IMAGE_SIZE);
 //        saveImage(colorImage, "jpg", "D:\\Documents\\STUDIA\\PWr_SUBJECTS\\SEMESTR_6\\grafika_laby\\created_images\\out_img_color.jpg", "Color");
@@ -35,8 +36,8 @@ public class Task1a_blur {
                 d1 /= 1.0;
                 d1 += 0.05;
                 double d = 1.0 / d1;
-                System.out.println(d1);
-                System.out.println(d);
+//                System.out.println(d1);
+//                System.out.println(d);
 
                 int intensity = (int) (128 * (Math.sin((Math.PI * d1) / w) + 1));
                 intensity = clamp(intensity, 0, 255);
@@ -48,37 +49,6 @@ public class Task1a_blur {
         return image;
     }
 
-    // Tworzenie kolorowego obrazu
-    private static BufferedImage createColorImage(int width, int height) {
-        BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
-
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < width; j++) {
-                int gray = j % 256;
-                int color = byte2RGB(gray, (256 - gray), (i % 256));
-                image.setRGB(j, i, color);
-            }
-        }
-        return image;
-    }
-
-    // Zapisywanie do pliku
-    private static void saveImage(BufferedImage image, String format, String filePath, String imageType) {
-        try {
-            ImageIO.write(image, format, new File(filePath));
-            System.out.println(imageType + " image created successfully");
-        } catch (IOException e) {
-            System.out.println(imageType + " image cannot be stored in " + format.toUpperCase() + " file");
-        }
-    }
-
-    // Konwersja wartości bajtów na kolor RGB
-    private static int byte2RGB(int red, int green, int blue) {
-        red = clamp(red, 0, 255);
-        green = clamp(green, 0, 255);
-        blue = clamp(blue, 0, 255);
-        return (red << 16) + (green << 8) + blue;
-    }
 
     // Ograniczenie zakresu wartości (0-255)
     private static int clamp(int value, int min, int max) {

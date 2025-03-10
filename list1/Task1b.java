@@ -55,10 +55,11 @@ public class Task1b {
         }
 
 
-        String savePath = "D:\\Documents\\STUDIA\\PWr_SUBJECTS\\SEMESTR_6\\grafika_laby\\created_images\\task1b.bmp";
+        String savePath = "..\\results\\task1b.bmp";
         Utils.saveImage(image, savePath);
 
 //        command to run in cmd
+//        need to be in list1 folder to run it
 //        java Task1b.java 8 20 20 0 0 0 255 255 255
     }
 }
