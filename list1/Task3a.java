@@ -57,11 +57,14 @@ public class Task3a {
             }
         }
 */
+//        int offsetY = 100;
+//        int offsetX = 10;
+        // put it in the second fors below
 
         for (int y = 0; y < imageHeight; y++) {
             for (int x = 0; x < imageWidth; x++) {
 
-                // Calculating if pixels is inside of circle
+                // Calculating if pixels are inside of circle
                 for (centerY = 0; centerY <= imageHeight + d / 2; centerY += d) {
                     for (centerX = 0; centerX <= imageWidth + d / 2; centerX += d) {
                         //calculating pixel distance from circle center

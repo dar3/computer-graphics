@@ -31,7 +31,7 @@ public class Task1b {
         int gridColor = Utils.int2RGB(gridR, gridG, gridB);
         int bgColor = Utils.int2RGB(bgR, bgG, bgB);
 
-        //Background filling
+        //Background filling pixel by pixel
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
                 image.setRGB(j, i, bgColor);
@@ -43,6 +43,8 @@ public class Task1b {
             for (int j = 0; j < width; j++) {
 
                 //vertical lines
+                //if value is in grid width pixel belongs to grid and we draw
+                // example: 2 % 28 < 8 we draw the line
                 if (j % (gridSpaceX + gridWidth) < gridWidth) {
                     image.setRGB(j, i, gridColor);
                 }

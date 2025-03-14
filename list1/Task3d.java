@@ -25,6 +25,7 @@ public class Task3d {
 
         for (int i = 0; i < imageHeight; i++)
             for (int j = 0; j < imageWidth; j++) {
+//                pixel position within the current grid element
                 int is = i % elem_size;
                 int js = j % elem_size;
                 center_x = elem_size / 2;

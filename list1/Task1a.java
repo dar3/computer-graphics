@@ -28,12 +28,19 @@ public class Task1a {
         int centerX = width / 2;
         int centerY = height / 2;
 
+//        i stands for Y axis (pixel rows)
+//        j stands for X axis (pixel columns)
         for (i = 0; i < height; i++)
             for (j = 0; j < width; j++) {
 
+//                Euclidean distance
                 double d = Math.sqrt(Math.pow(j - centerX, 2) + Math.pow(i - centerY, 2));
+//                sin (-1 1) +1 makes (0,2)
+//                128 * makes intensity from (0, 255)
+//                we can put 127.99 instead of 128 so we wouldn't need to use second if
                 intensity = (int) (128 * (Math.sin((Math.PI * d) / w) + 1));
 
+//                limitations so it stays in the rbg limit
                 if (intensity < 0) {
                     intensity = 0;
                 }

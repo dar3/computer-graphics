@@ -13,6 +13,8 @@ public class Task1c {
         int fieldSize = Integer.parseInt(args[0]);       // field size
 
 //        first tile color
+        // (0,0,0) - black
+        // (255,255,255) - white
         int r1 = Integer.parseInt(args[1]);
         int g1 = Integer.parseInt(args[2]);
         int b1 = Integer.parseInt(args[3]);
@@ -30,9 +32,14 @@ public class Task1c {
         int color2 = Utils.int2RGB(r2, g2, b2);
 
         // chess field generation
+        // y vertical x horizontal
         for (int y = 0; y < width; y++) {
             for (int x = 0; x < height; x++) {
 
+                // sum represents the shift
+                //Divides the x coordinate by the fieldSize value (e.g. 50).
+                // The effect is to get the horizontal "column" (field) number.
+                // endless chess and we only use window of chess table
                 if (((x / fieldSize) + (y / fieldSize)) % 2 == 0) {
                     image.setRGB(x, y, color1);
                 } else {

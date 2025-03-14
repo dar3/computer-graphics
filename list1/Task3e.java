@@ -26,13 +26,14 @@ public class Task3e {
                 double angle = Math.atan2(y - centerY, x - centerX);
 
                 // if angle is negative add 2*PI so it becomes from the first quarter (positive)
+                // could have used only Math.PI. Using 2*Math.PI is redundant
                 if (angle < 0) {
                     angle += 2 * Math.PI;
                 }
 
                 // Coloring stripe based on angle  % 2 == 0 even or odd
                 // Math.PI/15 because we have 15 stripes
-                if (Math.floor(angle / (Math.PI / 15)) % 2 == 0) {
+                if (Math.floor(angle / (Math.PI / 6)) % 2 == 0) {
                     image.setRGB(x, y, blackColor);
                 } else {
                     image.setRGB(x, y, whiteColor);

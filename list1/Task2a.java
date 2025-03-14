@@ -24,11 +24,15 @@ public class Task2a {
         int centerX = imageWidth / 2;
         int centerY = imageHeight / 2;
 
+//        int centerX = imageWidth / 2 + 200;
+//        int centerY = imageHeight / 2 + 10;
+
         int blackColor = Utils.int2RGB(0, 0, 0);
 
 //        ring width
         int w = 30;
 
+        // j horizontal i vertical
         for (int i = 0; i < imageHeight; i++)
             for (int j = 0; j < imageWidth; j++) {
 
@@ -45,8 +49,10 @@ public class Task2a {
         String savePath = "..\\results\\task2a.bmp";
         Utils.saveImage(image, savePath);
 
-        //command for cmd
-        // java .\Task2a.java ..\images\antenna.jpg
+        /*command for cmd
+        java .\Task2a.java ..\images\antenna.jpg
+
+         */
 
 
     }
