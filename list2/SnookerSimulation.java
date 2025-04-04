@@ -15,8 +15,8 @@ class Ball{
     {
         this.number = number;
         this.color = color;
-        this.radius = 12;
-        this.speed = Math.random() * 9;
+        this.radius = 10;
+        this.speed = Math.random() * 8;
         this.angle = Math.random() * 2 * Math.PI;
         this.torque = 0.005;
         this.ball_position_x = Math.random() * (SnookerSimulation.WIDTH - 4*radius) + radius;

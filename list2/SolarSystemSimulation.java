@@ -25,9 +25,10 @@ class Planet {
 
     // simulate the motion
     public void updatePosition() {
-/*
+
+        /*
         if (this.name.equals("Mars")) {
-            this.angle += 0.01 / orbital_period; // change round direction for Mars
+            this.angle += 0.01 / orbital_period;// change round direction for Mars
         } else {
             this.angle -= 0.01 / orbital_period; // rest of the planets round normally
         }

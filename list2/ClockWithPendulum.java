@@ -74,6 +74,7 @@ class ClockPane extends JPanel {
         }
     }
 
+
     public void DrawPendulumImage(Graphics g, int start_x, int start_y) {
 
         // start_x start_y point of pendulum attachment
@@ -83,10 +84,19 @@ class ClockPane extends JPanel {
         // cos for vertical movement
         // converting angles to radians
         x = start_x + (int) (pendulum_length * Math.sin(Math.PI * angle / 180.0));
-        y = start_y + (int) (pendulum_length * Math.cos(Math.PI * angle / 180.0));
-        g.drawLine(start_x, start_y, x, y);
-        g.fillOval(x - ball_radius, y - ball_radius, ball_radius * 2, ball_radius * 2);
+        y = start_y  + (int) (pendulum_length * Math.cos(Math.PI * angle / 180.0));
+        g.drawLine(start_x , start_y, x, y);
+
+//        int ball_x = (start_x + x) / 2;
+//        int ball_y = (start_y + y) / 2;
+
+        int ball_x = x - (int) (ball_radius * Math.sin(Math.PI * angle / 180.0));
+        int ball_y = y - (int) (ball_radius * Math.cos(Math.PI * angle / 180.0));
+        g.fillOval(ball_x - ball_radius, ball_y - ball_radius, ball_radius * 2, ball_radius * 2);
     }
+
+
+
 
     public int getPendulumAngle() {
         double timeElapsed = System.currentTimeMillis() - start_time;
