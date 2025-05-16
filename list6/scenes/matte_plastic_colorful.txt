@@ -1,0 +1,9 @@
+3
+60.0 40.0 80.0 0.0 220.0 100.0
+-40.0 60.0 70.0 200.0 100.0 100.0
+40.0 -40.0 40.0 150.0 20.0 200.0
+0.3 0.3 0.3   0.1 0.1 0.1   0.3 0.3 0.3   0 0 0  10.0
+0.0 0.0 0.0  10.0
+30.0 30.0 30.0
+800 800
+D:\Documents\Programming_projects\ComputerGraphics\tests\phong\outputs\color_mate_plastic.png

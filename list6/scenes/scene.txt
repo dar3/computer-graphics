@@ -1,0 +1,8 @@
+2
+50.0 0.0 50.0 0.0 255.0 0.0
+0.0 50.0 100.0 0.0 0.0 255.0
+0.2 0.4 0.2   0.3 0.3 0.3   0.3 0.3 0.3   0.0 0.0 0.0  12.0
+0.0 5.0 0.0  10.0
+20.0 20.0 20.0
+800 800
+D:\Documents\Programming_projects\ComputerGraphics\tests\phong\outputs\simple_sphere.png

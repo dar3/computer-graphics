@@ -1,4 +1,4 @@
-package tests.gouradmar;
+package list5;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
